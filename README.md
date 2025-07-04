@@ -38,7 +38,12 @@ cd jobseeker_company
 ### 2. Start MongoDB
 Make sure MongoDB is running on `localhost:27017`
 
-### 3. Run the application
+### 3. Install dependencies and build the project
+```bash
+mvn install
+```
+
+### 4. Run the application
 ```bash
 mvn spring-boot:run
 ```
