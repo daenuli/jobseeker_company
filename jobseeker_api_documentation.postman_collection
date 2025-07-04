@@ -1,0 +1,857 @@
+{
+	"info": {
+		"_postman_id": "bddf02bb-aaca-4879-9fd3-9dd4c8a31169",
+		"name": "jobseeker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2059104"
+	},
+	"item": [
+		{
+			"name": "candidates",
+			"item": [
+				{
+					"name": "Get all candidates",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/candidates",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"candidates"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "5",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "lesta",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "name",
+									"disabled": true
+								},
+								{
+									"key": "sortDir",
+									"value": "desc",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get all candidates",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/candidates",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"candidates"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0",
+											"disabled": true
+										},
+										{
+											"key": "size",
+											"value": "5",
+											"disabled": true
+										},
+										{
+											"key": "name",
+											"value": "lesta",
+											"disabled": true
+										},
+										{
+											"key": "sortBy",
+											"value": "name",
+											"disabled": true
+										},
+										{
+											"key": "sortDir",
+											"value": "desc",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 04 Jul 2025 10:25:51 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"content\": [\n        {\n            \"id\": \"6867ab539daa543834b68bc8\",\n            \"name\": \"Agus Suryanto\",\n            \"email\": \"agus.s@example.com\",\n            \"birthDate\": \"1986-12-03\",\n            \"age\": 38,\n            \"gender\": \"male\",\n            \"currentSalary\": 9200000\n        },\n        {\n            \"id\": \"6867ab539daa543834b68bbc\",\n            \"name\": \"Ahmad Wijaya\",\n            \"email\": \"ahmad.w@example.com\",\n            \"birthDate\": \"1992-08-12\",\n            \"age\": 32,\n            \"gender\": \"male\",\n            \"currentSalary\": 7200000\n        },\n        {\n            \"id\": \"6867ab539daa543834b68bca\",\n            \"name\": \"Bambang Hermawan\",\n            \"email\": \"bambang.h@example.com\",\n            \"birthDate\": \"1990-07-28\",\n            \"age\": 34,\n            \"gender\": \"male\",\n            \"currentSalary\": 7800000\n        },\n        {\n            \"id\": \"6867ab539daa543834b68bba\",\n            \"name\": \"Budi Santoso\",\n            \"email\": \"budi.s@example.com\",\n            \"birthDate\": \"1989-11-20\",\n            \"age\": 35,\n            \"gender\": \"male\",\n            \"currentSalary\": 8000000\n        },\n        {\n            \"id\": \"6867ab539daa543834b68bbf\",\n            \"name\": \"Dewi Anggraini\",\n            \"email\": \"dewi.a@example.com\",\n            \"birthDate\": \"2000-07-09\",\n            \"age\": 24,\n            \"gender\": \"female\",\n            \"currentSalary\": 4800000\n        }\n    ],\n    \"totalElements\": 20,\n    \"totalPages\": 4\n}"
+						}
+					]
+				},
+				{
+					"name": "Create a new candidate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"hello\",\r\n    \"birthDate\": \"2000-06-06\",\r\n    \"currentSalary\": 200000,\r\n    \"gender\": \"male\",\r\n    \"email\": \"hello_one@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/candidates",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"candidates"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get candidate by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/candidates/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"candidates",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "686780281c0e713da4edd557"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get candidate by ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/candidates/:id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"candidates",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "686780281c0e713da4edd557"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 04 Jul 2025 07:21:31 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"686780281c0e713da4edd557\",\n    \"name\": \"Indah Lestari\",\n    \"email\": \"indah.l@example.com\",\n    \"birthDate\": \"2002-03-01\",\n    \"age\": 23,\n    \"gender\": \"female\",\n    \"currentSalary\": 4500000\n}"
+						}
+					]
+				},
+				{
+					"name": "Update candidate",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"hello\",\r\n    \"birthDate\": \"2000-06-06\",\r\n    \"currentSalary\": 200000,\r\n    \"gender\": \"male\",\r\n    \"email\": \"hello_one@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/candidates/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"candidates",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6867d6d9171674204d9cc7d1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete candidate",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/candidates/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"candidates",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "686634866083a80dac35db65"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete candidate",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/candidates/:id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"candidates",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "6867531c98a2cb7550365869"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 04 Jul 2025 04:06:14 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Candidate deleted successfully\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "vacancy",
+			"item": [
+				{
+					"name": "Get all vacancies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/vacancies",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"vacancies"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "10",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "lesta",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "name",
+									"disabled": true
+								},
+								{
+									"key": "sortDir",
+									"value": "desc",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get all vacancies",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/vacancies",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"vacancies"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0",
+											"disabled": true
+										},
+										{
+											"key": "size",
+											"value": "10",
+											"disabled": true
+										},
+										{
+											"key": "name",
+											"value": "lesta",
+											"disabled": true
+										},
+										{
+											"key": "sortBy",
+											"value": "name",
+											"disabled": true
+										},
+										{
+											"key": "sortDir",
+											"value": "desc",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 04 Jul 2025 14:41:11 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date"
+								}
+							],
+							"body": "{\n    \"content\": [\n        {\n            \"id\": \"6867d460171674204d9cc7c1\",\n            \"name\": \"Backend Engineer\",\n            \"criteria\": [\n                {\n                    \"criteriaType\": \"Age Criteria\",\n                    \"details\": \"Min Age: 25, Max Age: 40\",\n                    \"weight\": 3\n                },\n                {\n                    \"criteriaType\": \"Gender Criteria\",\n                    \"details\": \"Gender: ANY\",\n                    \"weight\": 1\n                },\n                {\n                    \"criteriaType\": \"Salary Range Criteria\",\n                    \"details\": \"Min Salary: Rp. 6.000.000, Max Salary: Rp. 9.000.000\",\n                    \"weight\": 5\n                }\n            ]\n        },\n        {\n            \"id\": \"6867d460171674204d9cc7c9\",\n            \"name\": \"Business Analyst\",\n            \"criteria\": [\n                {\n                    \"criteriaType\": \"Age Criteria\",\n                    \"details\": \"Min Age: 25, Max Age: 40\",\n                    \"weight\": 3\n                },\n                {\n                    \"criteriaType\": \"Gender Criteria\",\n                    \"details\": \"Gender: ANY\",\n                    \"weight\": 1\n                },\n                {\n                    \"criteriaType\": \"Salary Range Criteria\",\n                    \"details\": \"Min Salary: Rp. 6.000.000, Max Salary: Rp. 9.000.000\",\n                    \"weight\": 4\n                }\n            ]\n        },\n        {\n            \"id\": \"6867d460171674204d9cc7ce\",\n            \"name\": \"Cloud Architect\",\n            \"criteria\": [\n                {\n                    \"criteriaType\": \"Age Criteria\",\n                    \"details\": \"Min Age: 32, Max Age: 50\",\n                    \"weight\": 6\n                },\n                {\n                    \"criteriaType\": \"Gender Criteria\",\n                    \"details\": \"Gender: ANY\",\n                    \"weight\": 1\n                },\n                {\n                    \"criteriaType\": \"Salary Range Criteria\",\n                    \"details\": \"Min Salary: Rp. 10.000.000, Max Salary: Rp. 16.000.000\",\n                    \"weight\": 8\n                }\n            ]\n        },\n        {\n            \"id\": \"6867d460171674204d9cc7ca\",\n            \"name\": \"Cybersecurity Specialist\",\n            \"criteria\": [\n                {\n                    \"criteriaType\": \"Age Criteria\",\n                    \"details\": \"Min Age: 28, Max Age: 45\",\n                    \"weight\": 5\n                },\n                {\n                    \"criteriaType\": \"Gender Criteria\",\n                    \"details\": \"Gender: MALE\",\n                    \"weight\": 2\n                },\n                {\n                    \"criteriaType\": \"Salary Range Criteria\",\n                    \"details\": \"Min Salary: Rp. 8.500.000, Max Salary: Rp. 13.000.000\",\n                    \"weight\": 7\n                }\n            ]\n        },\n        {\n            \"id\": \"6867d460171674204d9cc7c7\",\n            \"name\": \"Data Analyst\",\n            \"criteria\": [\n                {\n                    \"criteriaType\": \"Age Criteria\",\n                    \"details\": \"Min Age: 22, Max Age: 32\",\n                    \"weight\": 2\n                },\n                {\n                    \"criteriaType\": \"Gender Criteria\",\n                    \"details\": \"Gender: FEMALE\",\n                    \"weight\": 2\n                },\n                {\n                    \"criteriaType\": \"Salary Range Criteria\",\n                    \"details\": \"Min Salary: Rp. 4.800.000, Max Salary: Rp. 7.200.000\",\n                    \"weight\": 4\n                }\n            ]\n        },\n        {\n            \"id\": \"6867d460171674204d9cc7cd\",\n            \"name\": \"Database Administrator\",\n            \"criteria\": [\n                {\n                    \"criteriaType\": \"Age Criteria\",\n                    \"details\": \"Min Age: 27, Max Age: 45\",\n                    \"weight\": 4\n                },\n                {\n                    \"criteriaType\": \"Gender Criteria\",\n                    \"details\": \"Gender: MALE\",\n                    \"weight\": 1\n                },\n                {\n                    \"criteriaType\": \"Salary Range Criteria\",\n                    \"details\": \"Min Salary: Rp. 7.000.000, Max Salary: Rp. 10.500.000\",\n                    \"weight\": 5\n                }\n            ]\n        },\n        {\n            \"id\": \"6867d460171674204d9cc7c2\",\n            \"name\": \"DevOps Engineer\",\n            \"criteria\": [\n                {\n                    \"criteriaType\": \"Age Criteria\",\n                    \"details\": \"Min Age: 28, Max Age: 45\",\n                    \"weight\": 4\n                },\n                {\n                    \"criteriaType\": \"Gender Criteria\",\n                    \"details\": \"Gender: MALE\",\n                    \"weight\": 2\n                },\n                {\n                    \"criteriaType\": \"Salary Range Criteria\",\n                    \"details\": \"Min Salary: Rp. 8.000.000, Max Salary: Rp. 12.000.000\",\n                    \"weight\": 6\n                }\n            ]\n        },\n        {\n            \"id\": \"6867d460171674204d9cc7c0\",\n            \"name\": \"Frontend Developer\",\n            \"criteria\": [\n                {\n                    \"criteriaType\": \"Age Criteria\",\n                    \"details\": \"Min Age: 23, Max Age: 32\",\n                    \"weight\": 2\n                },\n                {\n                    \"criteriaType\": \"Gender Criteria\",\n                    \"details\": \"Gender: FEMALE\",\n                    \"weight\": 1\n                },\n                {\n                    \"criteriaType\": \"Salary Range Criteria\",\n                    \"details\": \"Min Salary: Rp. 5.000.000, Max Salary: Rp. 7.500.000\",\n                    \"weight\": 4\n                }\n            ]\n        },\n        {\n            \"id\": \"6867d460171674204d9cc7bd\",\n            \"name\": \"Junior Software Engineer\",\n            \"criteria\": [\n                {\n                    \"criteriaType\": \"Age Criteria\",\n                    \"details\": \"Min Age: 22, Max Age: 30\",\n                    \"weight\": 3\n                },\n                {\n                    \"criteriaType\": \"Gender Criteria\",\n                    \"details\": \"Gender: ANY\",\n                    \"weight\": 1\n                },\n                {\n                    \"criteriaType\": \"Salary Range Criteria\",\n                    \"details\": \"Min Salary: Rp. 4.500.000, Max Salary: Rp. 6.500.000\",\n                    \"weight\": 5\n                }\n            ]\n        },\n        {\n            \"id\": \"6867d460171674204d9cc7cb\",\n            \"name\": \"Machine Learning Engineer\",\n            \"criteria\": [\n                {\n                    \"criteriaType\": \"Age Criteria\",\n                    \"details\": \"Min Age: 26, Max Age: 40\",\n                    \"weight\": 4\n                },\n                {\n                    \"criteriaType\": \"Gender Criteria\",\n                    \"details\": \"Gender: ANY\",\n                    \"weight\": 1\n                },\n                {\n                    \"criteriaType\": \"Salary Range Criteria\",\n                    \"details\": \"Min Salary: Rp. 7.500.000, Max Salary: Rp. 11.500.000\",\n                    \"weight\": 6\n                }\n            ]\n        }\n    ],\n    \"totalElements\": 20,\n    \"totalPages\": 2\n}"
+						}
+					]
+				},
+				{
+					"name": "Create a new vacancy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Test Vacancy 2.1.1\",\r\n    \"criteria\": [\r\n        {\r\n            \"type\": \"AGE\",\r\n            \"minimumAge\": 38,\r\n            \"maximumAge\": 39,\r\n            \"weight\": 7\r\n        },\r\n        {\r\n            \"type\": \"SALARY_RANGE\",\r\n            \"minimumSalary\": 8000000,\r\n            \"maximumSalary\": 15000000,\r\n            \"weight\": 3\r\n        },\r\n        {\r\n            \"type\": \"GENDER\",\r\n            \"gender\": \"female\",\r\n            \"weight\": 5\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/vacancies",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"vacancies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get vacancy by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/vacancies/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"vacancies",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6867d9d4171674204d9cc7d2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get vacancy by ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/vacancies/:id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"vacancies",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "6867d9d4171674204d9cc7d2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 04 Jul 2025 13:42:52 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"6867d9d4171674204d9cc7d2\",\n    \"name\": \"Test Vacancy 2.1\",\n    \"criteria\": [\n        {\n            \"criteriaType\": \"Age Criteria\",\n            \"details\": \"Min Age: 38, Max Age: 39\",\n            \"weight\": 7\n        },\n        {\n            \"criteriaType\": \"Salary Range Criteria\",\n            \"details\": \"Min Salary: Rp. 8.000.000, Max Salary: Rp. 15.000.000\",\n            \"weight\": 3\n        },\n        {\n            \"criteriaType\": \"Gender Criteria\",\n            \"details\": \"Gender: FEMALE\",\n            \"weight\": 5\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Update vacancy",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Test Vacancy 3\",\r\n    \"criteria\": [\r\n        {\r\n            \"type\": \"AGE\",\r\n            \"minimumAge\": 38,\r\n            \"maximumAge\": 39,\r\n            \"weight\": 7\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/vacancies/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"vacancies",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6866922008ac5c186ed51fed"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete vacancy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/vacancies/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"vacancies",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6867da80171674204d9cc7d3"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete vacancy",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/vacancies/:id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"vacancies",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "6867da80171674204d9cc7d3"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 04 Jul 2025 13:43:35 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Vacancy deleted successfully\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "ranking",
+			"item": [
+				{
+					"name": "Rank all candidates for a specific vacancy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/ranking/vacancy/:vacancyid/candidates",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"ranking",
+								"vacancy",
+								":vacancyid",
+								"candidates"
+							],
+							"variable": [
+								{
+									"key": "vacancyid",
+									"value": "6867d460171674204d9cc7c9"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Rank all candidates for a specific vacancy",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/ranking/vacancy/:vacancyid/candidates",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"ranking",
+										"vacancy",
+										":vacancyid",
+										"candidates"
+									],
+									"variable": [
+										{
+											"key": "vacancyid",
+											"value": "6867d460171674204d9cc7c9"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 04 Jul 2025 14:42:26 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"rank\": 1,\n        \"candidateId\": \"6867d460171674204d9cc7ac\",\n        \"candidateName\": \"Ahmad Wijaya\",\n        \"candidateEmail\": \"ahmad.w@example.com\",\n        \"score\": 8\n    },\n    {\n        \"rank\": 2,\n        \"candidateId\": \"6867d460171674204d9cc7ba\",\n        \"candidateName\": \"Bambang Hermawan\",\n        \"candidateEmail\": \"bambang.h@example.com\",\n        \"score\": 8\n    },\n    {\n        \"rank\": 3,\n        \"candidateId\": \"6867d460171674204d9cc7aa\",\n        \"candidateName\": \"Budi Santoso\",\n        \"candidateEmail\": \"budi.s@example.com\",\n        \"score\": 8\n    },\n    {\n        \"rank\": 4,\n        \"candidateId\": \"6867d460171674204d9cc7b4\",\n        \"candidateName\": \"Eko Prasetyo\",\n        \"candidateEmail\": \"eko.p@example.com\",\n        \"score\": 8\n    },\n    {\n        \"rank\": 5,\n        \"candidateId\": \"6867d460171674204d9cc7b0\",\n        \"candidateName\": \"Fajar Nugroho\",\n        \"candidateEmail\": \"fajar.n@example.com\",\n        \"score\": 8\n    },\n    {\n        \"rank\": 6,\n        \"candidateId\": \"6867d460171674204d9cc7b6\",\n        \"candidateName\": \"Hendra Gunawan\",\n        \"candidateEmail\": \"hendra.g@example.com\",\n        \"score\": 8\n    },\n    {\n        \"rank\": 7,\n        \"candidateId\": \"6867d460171674204d9cc7b3\",\n        \"candidateName\": \"Lina Maharani\",\n        \"candidateEmail\": \"lina.m@example.com\",\n        \"score\": 8\n    },\n    {\n        \"rank\": 8,\n        \"candidateId\": \"6867d460171674204d9cc7ad\",\n        \"candidateName\": \"Maya Sari\",\n        \"candidateEmail\": \"maya.s@example.com\",\n        \"score\": 8\n    },\n    {\n        \"rank\": 9,\n        \"candidateId\": \"6867d460171674204d9cc7b1\",\n        \"candidateName\": \"Rina Kusuma\",\n        \"candidateEmail\": \"rina.k@example.com\",\n        \"score\": 8\n    },\n    {\n        \"rank\": 10,\n        \"candidateId\": \"6867d460171674204d9cc7bb\",\n        \"candidateName\": \"Yuni Astuti\",\n        \"candidateEmail\": \"yuni.a@example.com\",\n        \"score\": 8\n    },\n    {\n        \"rank\": 11,\n        \"candidateId\": \"6867d460171674204d9cc7b8\",\n        \"candidateName\": \"Agus Suryanto\",\n        \"candidateEmail\": \"agus.s@example.com\",\n        \"score\": 4\n    },\n    {\n        \"rank\": 12,\n        \"candidateId\": \"6867d460171674204d9cc7b2\",\n        \"candidateName\": \"Doni Setiawan\",\n        \"candidateEmail\": \"doni.s@example.com\",\n        \"score\": 4\n    },\n    {\n        \"rank\": 13,\n        \"candidateId\": \"6867d460171674204d9cc7b7\",\n        \"candidateName\": \"Fitri Handayani\",\n        \"candidateEmail\": \"fitri.h@example.com\",\n        \"score\": 4\n    },\n    {\n        \"rank\": 14,\n        \"candidateId\": \"6867d460171674204d9cc7ae\",\n        \"candidateName\": \"Rizki Pratama\",\n        \"candidateEmail\": \"rizki.p@example.com\",\n        \"score\": 4\n    },\n    {\n        \"rank\": 15,\n        \"candidateId\": \"6867d460171674204d9cc7a9\",\n        \"candidateName\": \"Siti Rahayu\",\n        \"candidateEmail\": \"siti.r@example.com\",\n        \"score\": 4\n    },\n    {\n        \"rank\": 16,\n        \"candidateId\": \"6867d460171674204d9cc7af\",\n        \"candidateName\": \"Dewi Anggraini\",\n        \"candidateEmail\": \"dewi.a@example.com\",\n        \"score\": 1\n    },\n    {\n        \"rank\": 17,\n        \"candidateId\": \"6867d460171674204d9cc7ab\",\n        \"candidateName\": \"Indah Lestari\",\n        \"candidateEmail\": \"indah.l@example.com\",\n        \"score\": 1\n    },\n    {\n        \"rank\": 18,\n        \"candidateId\": \"6867d460171674204d9cc7b9\",\n        \"candidateName\": \"Novi Ratnasari\",\n        \"candidateEmail\": \"novi.r@example.com\",\n        \"score\": 1\n    },\n    {\n        \"rank\": 19,\n        \"candidateId\": \"6867d460171674204d9cc7bc\",\n        \"candidateName\": \"Rudi Hartono\",\n        \"candidateEmail\": \"rudi.h@example.com\",\n        \"score\": 1\n    },\n    {\n        \"rank\": 20,\n        \"candidateId\": \"6867d460171674204d9cc7b5\",\n        \"candidateName\": \"Sari Wulandari\",\n        \"candidateEmail\": \"sari.w@example.com\",\n        \"score\": 1\n    }\n]"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

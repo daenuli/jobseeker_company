@@ -1,0 +1,11 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/jobseeker_company_dev
+      auto-index-creation: true
+
+logging:
+  level:
+    com.jobseeker: DEBUG
+    org.springframework.data.mongodb: DEBUG
+    org.springframework.web: DEBUG

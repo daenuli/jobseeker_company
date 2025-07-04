@@ -1,0 +1,15 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/jobseeker_company
+      auto-index-creation: true
+  application:
+    name: jobseeker-company
+
+server:
+  port: 8080
+
+logging:
+  level:
+    com.jobseeker: DEBUG
+    org.springframework.data.mongodb: DEBUG
