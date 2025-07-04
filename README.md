@@ -58,7 +58,32 @@ Content-Type: application/json
 
 #### Get All Candidates
 ```http
-GET /api/candidates
+GET /api/candidates?page=0&size=10&sortBy=name&sortDir=asc&name=john
+```
+
+**Query Parameters:**
+- `page`: Page number (default: 0)
+- `size`: Number of items per page (default: 10)
+- `sortBy`: Field to sort by (default: name)
+- `sortDir`: Sort direction - asc or desc (default: asc)
+- `name`: Filter by candidate name (optional)
+
+**Response:**
+```json
+{
+  "content": [
+    {
+      "id": "507f1f77bcf86cd799439011",
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "birthDate": "1990-05-15",
+      "gender": "male",
+      "currentSalary": 750000
+    }
+  ],
+  "totalElements": 25,
+  "totalPages": 3
+}
 ```
 
 #### Get Candidate by ID
@@ -118,7 +143,42 @@ Content-Type: application/json
 
 #### Get All Vacancies
 ```http
-GET /api/vacancies
+GET /api/vacancies?page=0&size=10&sortBy=name&sortDir=asc&name=developer
+```
+
+**Query Parameters:**
+- `page`: Page number (default: 0)
+- `size`: Number of items per page (default: 10)
+- `sortBy`: Field to sort by (default: name)
+- `sortDir`: Sort direction - asc or desc (default: asc)
+- `name`: Filter by vacancy name (optional)
+
+**Response:**
+```json
+{
+  "content": [
+    {
+      "id": "507f1f77bcf86cd799439013",
+      "name": "Senior Software Developer",
+      "criteria": [
+        {
+          "type": "AGE",
+          "minimumAge": 25,
+          "maximumAge": 45,
+          "weight": 2
+        },
+        {
+          "type": "SALARY_RANGE",
+          "minimumSalary": 600000,
+          "maximumSalary": 1200000,
+          "weight": 3
+        }
+      ]
+    }
+  ],
+  "totalElements": 15,
+  "totalPages": 2
+}
 ```
 
 #### Get Vacancy by ID
@@ -283,15 +343,9 @@ server:
   port: 8080
 ```
 
-## Testing
+## API Testing
 
-### Unit Tests
-Run tests with:
-```bash
-mvn test
-```
-
-### API Testing with Postman
+### Postman Collection
 A comprehensive Postman collection is available for testing all API endpoints:
 
 📁 **Collection File**: `jobseeker_api_documentation.postman_collection`
@@ -306,6 +360,7 @@ A comprehensive Postman collection is available for testing all API endpoints:
 **Collection includes:**
 - All CRUD operations for candidates and vacancies
 - Ranking API endpoints
+- Pagination and filtering examples
 - Sample request bodies and expected responses
 - Pre-configured test scenarios
 
