@@ -209,11 +209,6 @@ Content-Type: application/json
 DELETE /api/vacancies/{id}
 ```
 
-#### Search Vacancies by Name
-```http
-GET /api/vacancies/search?name=developer
-```
-
 ### Ranking Endpoints
 
 #### Rank Candidates for Vacancy
