@@ -14,6 +14,13 @@ A RESTful API built with Java Spring Boot and MongoDB for managing candidates an
 - Support for multiple criteria types (Age, Gender, Salary Range)
 - Weighted criteria system
 
+### Candidate Ranking
+- Intelligent candidate ranking based on vacancy criteria
+- Multi-criteria scoring algorithm (Age, Gender, Salary)
+- Weighted scoring system for prioritizing criteria
+- Percentage-based scoring for easy comparison
+- Real-time ranking calculations
+
 ## Prerequisites
 
 - Java 17 or higher
